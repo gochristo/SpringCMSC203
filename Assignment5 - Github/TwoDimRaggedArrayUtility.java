@@ -1,14 +1,5 @@
-/*
- * Class: CMSC203
- * Instructor: Prof. Monshi
- * Description: Methods to potentially be used for calculating holiday bonus from a 2d array
- * Due: 04/02/2025
- * Platform/compiler: IntelliJ
- * I pledge that I have completed the programming assignment independently.
- *  I have not copied the code from a student or any source.
- *  I have not given my code to any student.
- *  Print your Name here: Christopher Andrews
- */
+package example.assignment5gui;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -106,7 +97,14 @@ public class TwoDimRaggedArrayUtility {
     }
 
     public static double getLowestInColumn(double[][] data, int col) {
-        double LowestInColumn = data[0][col];
+        double LowestInColumn = 0.0;
+        for (int i = 0; i < data.length; i++) {
+            if(data[i].length > col) {
+                LowestInColumn = data[i][col];
+                break;
+            }
+        }
+
         for (int i = 0; i < data.length; i++) {
             if (data[i].length > col && data[i][col] < LowestInColumn) {
                 LowestInColumn = data[i][col];
@@ -159,7 +157,14 @@ public class TwoDimRaggedArrayUtility {
     }
 
     public static double getHighestInColumn(double[][] data, int col) {
-        double highestInColumn = data[0][col];
+        double highestInColumn = 0.0;
+        for (int i = 0; i < data.length; i++) {
+            if(data[i].length > col) {
+                highestInColumn = data[i][col];
+                break;
+            }
+        }
+
         for (int i = 0; i < data.length; i++) {
             if (data[i].length > col && data[i][col] > highestInColumn) {
                 highestInColumn = data[i][col];
